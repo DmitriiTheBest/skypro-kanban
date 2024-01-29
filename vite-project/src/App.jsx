@@ -1,10 +1,7 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
 import "./App.css";
 import Column from "./Components/Column/Column";
-
 import Header from "./Components/Header/Header";
+
 import MainContent from "./Components/MainContent/MainContent";
 import PopBrowse from "./Components/POPUPs/PopBrowse/PopBrowse";
 import PopExit from "./Components/POPUPs/PopExit/PopExit";
@@ -13,7 +10,7 @@ import PopNewCard from "./Components/POPUPs/PopNewCard/PopNewCard";
 export default function App() {
   return (
     <>
-      <div class="wrapper">
+      <div className="wrapper">
         {/* Вызов компонентов и их импорт */}
         <PopExit />
         <PopNewCard />

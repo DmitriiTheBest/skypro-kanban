@@ -1,11 +1,9 @@
-// import Column from "..Column/Column";
-
 export default function MainContent({ children }) {
   return (
-    <main class="main">
-      <div class="container">
-        <div class="main__block">
-          <div class="main__content">
+    <main className="main">
+      <div className="container">
+        <div className="main__block">
+          <div className="main__content">
             {/* Скопировали содержимое "main__column column" в отдельный компонент
                 Здесь вызываем компонент через Props  */}
             {/* <Column title={"Without a status"} />

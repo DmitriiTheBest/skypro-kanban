@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Column from "./Components/Column/Column";
 import Header from "./Components/Header/Header";
@@ -17,7 +18,23 @@ const statusList = [
   "Ready",
 ];
 
+// Выполните логику, чтобы при нажатии на кнопку
+// Создать новую задачу добавлялась новая задача в столбец Без статуса (внутри фигурных скобок после App)
 export default function App() {
+  const [cards, setCards] = useState(cardList);
+  // создать функцию логики добавления новой карточки
+  function addCard() {
+    // создаем новую переменную для логики добавления новой карточки
+    const newCard = {
+      id: cards.length + 1,
+      topic: "Web design",
+      title: "New task",
+      date: "30.10.2023",
+      status: "Without a status",
+    };
+    // добавляем новую карточку в массив cards
+    setCards([...cards, newCard]);
+  }
   return (
     <>
       <div className="wrapper">
@@ -26,7 +43,8 @@ export default function App() {
         <PopNewCard />
         <PopBrowse />
 
-        <Header />
+        {/* передаем пропсом в компонент Header функцию addCard */}
+        <Header addCard={addCard} />
 
         {/* Сделали тег MainContent парным и передали в него Column из MainContent.jsx 
         Всё, что находится между открывающим и закрывающим тегом - это Children */}
@@ -41,7 +59,9 @@ export default function App() {
               <Column
                 title={status}
                 key={status}
-                cardList={cardList.filter((card) => card.status === status)}
+                // Состояние применяем к колонке, чтобы при изменении этого состояния происходила перерисовка разметки
+                // разметка перерисовывается в двух случаях - при изменении пропсов или при изменении состояния
+                cardList={cards.filter((card) => card.status === status)}
               />
             );
           })}

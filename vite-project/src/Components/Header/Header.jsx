@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Header() {
+export default function Header({ addCard }) {
   const [isOpened, setIsOpened] = useState(false); // Состояние открытия модального окна
   function togglePopUp() {
     // Функция открытия модального окна
@@ -21,9 +21,9 @@ export default function Header() {
             </a>
           </div>
           <nav class="header__nav">
-            <button class="header__btn-main-new _hover01" id="btnMainNew">
-              <a href="#popNewCard">Создать новую задачу</a>
-            </button>
+            {/* навешиваем обработчик события onClick для вызова функции addCard */}
+            <button onClick={addCard} class="header__btn-main-new _hover01" id="btnMainNew">
+              Создать новую задачу </button>
             {/* навешиваем обработчик события onClick для открытия модального окна */}
             <div onClick={togglePopUp} class="header__user _hover02">
               Ivan Ivanov

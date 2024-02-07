@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Column from "./Components/Column/Column";
 import Header from "./Components/Header/Header";
@@ -22,6 +22,23 @@ const statusList = [
 // Создать новую задачу добавлялась новая задача в столбец Без статуса (внутри фигурных скобок после App)
 export default function App() {
   const [cards, setCards] = useState(cardList);
+  // создание переменной isLoading
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Реализация эмуляции загрузки карточек для вывода текста «Данные загружаются».
+  // создать состояние, которое будет отслеживать, идет ли в данный момент загрузка данных
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // 2 секунды задержки
+  }, []); // Пустой массив зависимостей для запуска только при монтировании компонента
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 2000); // 2 секунды задержки
+  // }, []); // Пустой массив зависимостей для запуска только при монтировании компонента
+
   // создать функцию логики добавления новой карточки
   function addCard() {
     // создаем новую переменную для логики добавления новой карточки
@@ -46,31 +63,31 @@ export default function App() {
         {/* передаем пропсом в компонент Header функцию addCard */}
         <Header addCard={addCard} />
 
-        {/* Сделали тег MainContent парным и передали в него Column из MainContent.jsx 
-        Всё, что находится между открывающим и закрывающим тегом - это Children */}
-        <MainContent>
-          {/* отрисовка списков со статусами при помощи метода map так как это массив 
+        {isLoading ? (
+          "Loading..."
+        ) : (
+          <MainContent>
+            {/* отрисовка списков со статусами при помощи метода map так как это массив 
           Передаем в него статусы из массива statusList 
           Метод map принимает как аргумент callback функцию 
           первый параметр функции - элемент status 
           Элемент Status принимает в качестве пропсов title и key */}
-          {statusList.map((status) => {
-            return (
-              <Column
-                title={status}
-                key={status}
-                // Состояние применяем к колонке, чтобы при изменении этого состояния происходила перерисовка разметки
-                // разметка перерисовывается в двух случаях - при изменении пропсов или при изменении состояния
-                cardList={cards.filter((card) => card.status === status)}
-              />
-            );
-          })}
-          {/* <Column title={"Without a status"} />
-          <Column title={"Need to do"} />
-          <Column title={"In working"} />
-          <Column title={"Testing"} />
-          <Column title={"Ready"} /> */}
-        </MainContent>
+            {statusList.map((status) => {
+              return (
+                <Column
+                  title={status}
+                  key={status}
+                  // Состояние применяем к колонке, чтобы при изменении этого состояния происходила перерисовка разметки
+                  // разметка перерисовывается в двух случаях - при изменении пропсов или при изменении состояния
+                  cardList={cards.filter((card) => card.status === status)}
+                />
+              );
+            })}
+          </MainContent>
+        )}
+
+        {/* Сделали тег MainContent парным и передали в него Column из MainContent.jsx 
+        Всё, что находится между открывающим и закрывающим тегом - это Children */}
       </div>
     </>
   );

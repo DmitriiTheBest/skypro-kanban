@@ -5,7 +5,7 @@ export const cardList = [
     topic: "Web design",
     title: "Task name",
     date: "30.10.2023",
-    status: "Without a status",
+    status: "Ready",
   },
   {
     id: 2,

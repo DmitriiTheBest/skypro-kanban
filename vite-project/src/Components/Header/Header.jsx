@@ -1,4 +1,6 @@
 import { useState } from "react";
+// импортируем HeaderStyled-component для Header 
+import { HeaderStyled } from "./Header.styled"; 
 
 export default function Header({ addCard }) {
   const [isOpened, setIsOpened] = useState(false); // Состояние открытия модального окна
@@ -7,7 +9,8 @@ export default function Header({ addCard }) {
     setIsOpened(!isOpened);
   }
   return (
-    <header class="header">
+    // заменить тег 'header' на 'HeaderStyled' 
+    <HeaderStyled>
       <div class="container">
         <div class="header__block">
           <div class="header__logo _show _light">
@@ -51,6 +54,6 @@ export default function Header({ addCard }) {
           </nav>
         </div>
       </div>
-    </header>
+    </HeaderStyled>
   );
 }

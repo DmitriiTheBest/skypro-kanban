@@ -1,7 +1,12 @@
+// импортируем styled-component для Container
+import { Container } from "../../styled/common/common.styled";
+
 export default function MainContent({ children }) {
   return (
     <main className="main">
-      <div className="container">
+      
+      {/* заменить тег 'div' c классом 'Container' на styled-component 'Container'  */}
+      <Container>
         <div className="main__block">
           <div className="main__content">
             {/* Скопировали содержимое "main__column column" в отдельный компонент
@@ -17,7 +22,7 @@ export default function MainContent({ children }) {
             {children}
           </div>
         </div>
-      </div>
+      </Container>
     </main>
   );
 }

@@ -1,6 +1,13 @@
 import { useState } from "react";
-// импортируем HeaderStyled-component для Header 
-import { HeaderStyled } from "./Header.styled"; 
+
+// // импортируем HeaderStyled-component для Header и HeaderBlock для div Header__block 
+// import { HeaderBlock, HeaderStyled } from "./Header.styled";
+
+// другой  вариант импорта HeaderStyled-component для Header и HeaderBlock для div Header__block 
+import * as S from "./Header.styled";  
+
+// импортируем styled-component для Container
+import { Container } from "../../styled/common/common.styled";
 
 export default function Header({ addCard }) {
   const [isOpened, setIsOpened] = useState(false); // Состояние открытия модального окна
@@ -9,10 +16,11 @@ export default function Header({ addCard }) {
     setIsOpened(!isOpened);
   }
   return (
-    // заменить тег 'header' на 'HeaderStyled' 
-    <HeaderStyled>
-      <div class="container">
-        <div class="header__block">
+    // заменить тег 'header' на 'HeaderStyled'
+    <S.HeaderStyled>
+      {/* заменить тег 'div' c классом 'Container' на styled-component 'Container'  */}
+      <Container>
+        <S.HeaderBlock>
           <div class="header__logo _show _light">
             <a href="" target="_self">
               <img src="images/logo.png" alt="logo" />
@@ -25,8 +33,13 @@ export default function Header({ addCard }) {
           </div>
           <nav class="header__nav">
             {/* навешиваем обработчик события onClick для вызова функции addCard */}
-            <button onClick={addCard} class="header__btn-main-new _hover01" id="btnMainNew">
-              Создать новую задачу </button>
+            <button
+              onClick={addCard}
+              class="header__btn-main-new _hover01"
+              id="btnMainNew"
+            >
+              Создать новую задачу{" "}
+            </button>
             {/* навешиваем обработчик события onClick для открытия модального окна */}
             <div onClick={togglePopUp} class="header__user _hover02">
               Ivan Ivanov
@@ -52,8 +65,8 @@ export default function Header({ addCard }) {
               </div>
             )}
           </nav>
-        </div>
-      </div>
-    </HeaderStyled>
+        </S.HeaderBlock>
+      </Container>
+    </S.HeaderStyled>
   );
 }

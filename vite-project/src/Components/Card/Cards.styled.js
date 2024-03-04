@@ -1,4 +1,5 @@
 import styled from "styled-components"; // создаем styled-component для компонента Cards (компонент Card)
+import { topicStyles } from "../../lib/topic";
 
 export const TopicText = styled.p` // создаем styled-component для p (параграф) Topic 
   font-size: 10px;

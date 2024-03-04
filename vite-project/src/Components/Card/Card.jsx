@@ -3,8 +3,10 @@ export default function Card({topic, title, date}) {
     <div className="cards__item">
       <div className="cards__card card">
         <div className="card__group">
+          {/* заменим div CardTheme на styled-component CardTopic */}
           <div className="card__theme _orange">
-            <p className="_orange">{topic}</p>
+          {/* заменим p (параграф) на styled-component TopicText */}
+            <p className="_orange">{topic}</p> 
           </div>
           <a href="#popBrowse" target="_self">
             <div className="card__btn">

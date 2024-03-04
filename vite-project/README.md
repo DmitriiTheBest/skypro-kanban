@@ -1,7 +1,29 @@
-Making Kanban board with React 
+Making Kanban board with React
 
-<!-- 
+<!--
 1. Пауза в видео на 50 минуте.
-2. Закончил на создании styled-components для тега Header,  для div Header__block, 
-а также сделал файл .js c styled-component для div Container. 
- -->
+2. Закончил на создании styled-components для тега Header,  для div Header__block,
+а также сделал файл .js c styled-component для div Container.
+
+Делаем стилизованные компоненты:
+// Header
+1. Сначала создаем новый файл header.styled.js (файл со стилями) в папке c компонентом, для которого хотим создать стилизованный компонент, чтобы было понятно, к чему относится стилизованный файлик.
+2. Следующим шагом импортируем styled из библиотеки styled-components строчкой
+/ import styled from "styled-components"; /, где styled - это основной инструмент библиотеки, тн метод,  который позволяет создавать стилизованные компоненты.
+3. Создаем переменную const через function expression и при помощи метода "styled" -> "const HeaderStyled = styled.header", выбираем необходимый тег (header), который нужно стилизовать и экспортируем (export). + ставим обратные кавычки ``, чтобы туда вставить стили.
+4. В файле со стилями (app.css) находим стили для компонента header, копируем их и вставляем в стилизованный файл (header.styled.js)
+5. Переходим в файл с функциональным компонентом (Header.jsx) и импортируем стилизованный файл (header.styled.js) в компонент -> пишем строчку import HeaderStyled from "./header.styled";
+6. далее меняем тег (header) на стилизованный компонент (HeaderStyled) -> в return вместо строчки "header className='header'" пишем строчку <HeaderStyled>. В закрывающем теге также пишем строчку </HeaderStyled>.
+
+// Common styles for all components
+Примечание. Если один и тот же класс используется в разных компонентах, то создаем отдельный файл с общими стилями.
+// Container 
+1. В директории src создаем папку styled, в ней создаем папку common и в ней создааем файл 
+Common.styled.js
+2. в созданном файле создаем компонент контейнера (container). 
+3. Проделываем все шаги по созданию стилизованного компонента как с компонентом Header. При выборе тега выбираем наименование div, так как container является div.
+Так как container исполььзуется в разных файлах, то меняем div с классом container в компонентах Header.jsx и MainContent.jsx  
+
+Продолжить с 01:06:00
+
+-->

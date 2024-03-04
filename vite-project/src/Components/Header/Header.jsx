@@ -21,21 +21,21 @@ export default function Header({ addCard }) {
       {/* заменить тег 'div' c классом 'Container' на styled-component 'Container'  */}
       <Container>
         <S.HeaderBlock>
-          <div class="header__logo _show _light">
+          <div className="header__logo _show _light">
             <a href="" target="_self">
               <img src="images/logo.png" alt="logo" />
             </a>
           </div>
-          <div class="header__logo _dark">
+          <div className="header__logo _dark">
             <a href="" target="_self">
               <img src="images/logo_dark.png" alt="logo" />
             </a>
           </div>
-          <nav class="header__nav">
+          <nav className="header__nav">
             {/* навешиваем обработчик события onClick для вызова функции addCard */}
             <button
               onClick={addCard}
-              class="header__btn-main-new _hover01"
+              className="header__btn-main-new _hover01"
               id="btnMainNew"
             >
               Создать новую задачу{" "}
@@ -49,13 +49,13 @@ export default function Header({ addCard }) {
             если isOpened = false, то модальное окно закрывается */}
             {isOpened && (
               <div
-                class="header__pop-user-set pop-user-set"
+                className="header__pop-user-set pop-user-set"
                 id="user-set-target"
               >
                 {/* <!-- <a href="">x</a> --> */}
-                <p class="pop-user-set__name">Ivan Ivanov</p>
-                <p class="pop-user-set__mail">ivan.ivanov@gmail.com</p>
-                <div class="pop-user-set__theme">
+                <p className="pop-user-set__name">Ivan Ivanov</p>
+                <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
+                <div className="pop-user-set__theme">
                   <p>Темная тема</p>
                   <input type="checkbox" class="checkbox" name="checkbox" />
                 </div>

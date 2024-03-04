@@ -51,12 +51,13 @@ body {
   background-color: #F1F1F1;
 }
 
-/* .container {
+/* закоменнтить после доработки */
+.container {
   max-width: 1260px;
   width: 100%;
   margin: 0 auto;
   padding: 0 30px;
-} */
+}
 
 ._hover01:hover {
   background-color: #33399b;

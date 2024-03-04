@@ -1,13 +1,16 @@
-export default function Card({topic, title, date}) {
+import { topicHeader } from "../../lib/topic";
+import { CardTopic, TopicText } from "./Cards.styled";
+
+export default function Card({ topic, title, date }) {
   return (
     <div className="cards__item">
       <div className="cards__card card">
         <div className="card__group">
           {/* заменим div CardTheme на styled-component CardTopic */}
-          <div className="card__theme _orange">
-          {/* заменим p (параграф) на styled-component TopicText */}
-            <p className="_orange">{topic}</p> 
-          </div>
+          <CardTopic $themeColor={topicHeader[topic]}>
+            {/* заменим p (параграф) на styled-component TopicText */}
+            <TopicText>{topic}</TopicText>
+          </CardTopic>
           <a href="#popBrowse" target="_self">
             <div className="card__btn">
               <div></div>

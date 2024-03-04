@@ -1,5 +1,5 @@
-import styled from "styled-components"; // создаем styled-component для компонента Cards (компонент Card)
-import { topicStyles } from "../../lib/topic";
+import styled from "styled-components"; // импортируем styled-component
+import { topicStyles } from "../../lib/topic"; // импортируем объект в котором содержатся стили для лейблов карточек
 
 export const TopicText = styled.p` // создаем styled-component для p (параграф) Topic 
   font-size: 10px;
@@ -12,10 +12,10 @@ export const CardTopic = styled.div` // создаем styled-component для d
   height: 20px;
   padding: 5px 14px;
   border-radius: 18px;
-  background-color: ${({ $topicColor }) =>
+  background-color: ${({ $themeColor }) =>
     topicStyles[$themeColor]?.backgroundColor || "#b4fdd1"};
 
   ${TopicText} {
-    color: ${({ $topicColor }) => topicStyles[$topicColor]?.color || "#06b16e"};
+    color: ${({ $themeColor }) => topicStyles[$themeColor]?.color || "#06b16e"};
   }
 `;

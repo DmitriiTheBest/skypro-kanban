@@ -22,7 +22,7 @@ Making Kanban board with React
 Common.styled.js
 2. в созданном файле создаем компонент контейнера (container). 
 3. Проделываем все шаги по созданию стилизованного компонента как с компонентом Header. При выборе тега выбираем наименование div, так как container является div.
-Так как container исполььзуется в разных файлах, то меняем div с классом container в компонентах Header.jsx и MainContent.jsx  
+Так как container используется в разных файлах, то меняем div с классом container в компонентах Header.jsx и MainContent.jsx  
 
 Продолжить с 01:06:00
 

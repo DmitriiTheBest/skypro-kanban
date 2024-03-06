@@ -13,9 +13,9 @@ export const CardTopic = styled.div` // создаем styled-component для d
   padding: 5px 14px;
   border-radius: 18px;
   background-color: ${({ $themeColor }) =>
-    topicStyles[$themeColor]?.backgroundColor || "#b4fdd1"};
+    topicStyles[$themeColor]?.backgroundColor || "#94a6be"};
 
   ${TopicText} {
-    color: ${({ $themeColor }) => topicStyles[$themeColor]?.color || "#06b16e"};
+    color: ${({ $themeColor }) => topicStyles[$themeColor]?.color || "#ffffff"};
   }
 `;

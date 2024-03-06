@@ -13,15 +13,15 @@ export const topicStyles = {
     backgroundColor: "#b4fdd1",
     color: "#06b16e",
   },
-  _gray: {
-    backgroundColor: "#94a6be",
-    color: "#ffffff",
-  },
+  // _gray: {
+  //   backgroundColor: "#94a6be",
+  //   color: "#ffffff",
+  // },
 };
 
 
 export const topicHeader = {
-  "Web Design": "_orange",
+  "Web design": "_orange",
   "Research": "_green",
   "Copywriting": "_purple",
 };

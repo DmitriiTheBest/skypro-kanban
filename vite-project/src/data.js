@@ -35,4 +35,11 @@ export const cardList = [
     date: "30.10.2023",
     status: "Without a status",
   },
+  {
+    id: 6,
+    topic: "Default",
+    title: "Task name",
+    date: "30.10.2023",
+    status: "Without a status",
+  },
 ];

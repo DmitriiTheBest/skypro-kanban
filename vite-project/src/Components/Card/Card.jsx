@@ -1,11 +1,11 @@
 import { topicHeader } from "../../lib/topic";
-import { CardTopic, TopicText } from "./Cards.styled";
+import { CardContent, CardGroup, CardTopic, TopicText } from "./Cards.styled";
 
 export default function Card({ topic, title, date }) {
   return (
     <div className="cards__item">
       <div className="cards__card card">
-        <div className="card__group">
+        <CardGroup>
           {/* заменим div CardTheme на styled-component CardTopic */}
           <CardTopic $themeColor={topicHeader[topic]}>
             {/* заменим p (параграф) на styled-component TopicText */}
@@ -18,8 +18,8 @@ export default function Card({ topic, title, date }) {
               <div></div>
             </div>
           </a>
-        </div>
-        <div className="card__content">
+        </CardGroup>
+        <CardContent>
           <a href="" target="_blank">
             <h3 className="card__title">{title}</h3>
           </a>
@@ -54,7 +54,7 @@ export default function Card({ topic, title, date }) {
             </svg>
             <p>{date}</p>
           </div>
-        </div>
+        </CardContent>
       </div>
     </div>
   );

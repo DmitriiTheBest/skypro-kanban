@@ -19,3 +19,22 @@ export const CardTopic = styled.div` // создаем styled-component для d
     color: ${({ $themeColor }) => topicStyles[$themeColor]?.color || "#ffffff"};
   }
 `;
+
+// создать styled-component для Card group
+export const CardGroup = styled.div`
+  width: 100%;
+  height: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+// создать styled-component для Card content
+export const CardContent = styled.div`
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+`;

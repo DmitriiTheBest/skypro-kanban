@@ -1,36 +1,37 @@
 import { topicHeader } from "../../lib/topic";
-import { CardContent, CardGroup, CardTopic, TopicText } from "./Cards.styled";
+// import { CardButton, CardContent, CardGroup, CardTopic, CardsCard, CardsItem, TopicText } from "./Cards.styled";
+
+import * as S from "./Cards.styled";
 
 export default function Card({ topic, title, date }) {
   return (
-    <div className="cards__item">
-      <div className="cards__card card">
-        <CardGroup>
+    <S.CardsItem>
+      <S.CardsCard>
+        <S.CardGroup>
           {/* заменим div CardTheme на styled-component CardTopic */}
-          <CardTopic $themeColor={topicHeader[topic]}>
+          <S.CardTopic $themeColor={topicHeader[topic]}>
             {/* заменим p (параграф) на styled-component TopicText */}
-            <TopicText>{topic}</TopicText>
-          </CardTopic>
+            <S.TopicText>{topic}</S.TopicText>
+          </S.CardTopic>
           <a href="#popBrowse" target="_self">
-            <div className="card__btn">
+            <S.CardButton>
               <div></div>
               <div></div>
               <div></div>
-            </div>
+            </S.CardButton>
           </a>
-        </CardGroup>
-        <CardContent>
+        </S.CardGroup>
+        <S.CardContent>
           <a href="" target="_blank">
-            <h3 className="card__title">{title}</h3>
+            <S.CardTitle>{title}</S.CardTitle>
           </a>
-          <div className="card__date">
+          <S.CardDate>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13"
               height="13"
               viewBox="0 0 13 13"
-              fill="none"
-            >
+              fill="none">
               <g clipPath="url(#clip0_1_415)">
                 <path
                   d="M10.5625 2.03125H2.4375C1.7644 2.03125 1.21875 2.5769 1.21875 3.25V10.5625C1.21875 11.2356 1.7644 11.7812 2.4375 11.7812H10.5625C11.2356 11.7812 11.7812 11.2356 11.7812 10.5625V3.25C11.7812 2.5769 11.2356 2.03125 10.5625 2.03125Z"
@@ -52,10 +53,10 @@ export default function Card({ topic, title, date }) {
                 </clipPath>
               </defs>
             </svg>
-            <p>{date}</p>
-          </div>
-        </CardContent>
-      </div>
-    </div>
+            <S.CardDateText>{date}</S.CardDateText>
+          </S.CardDate>
+        </S.CardContent>
+      </S.CardsCard>
+    </S.CardsItem>
   );
 }

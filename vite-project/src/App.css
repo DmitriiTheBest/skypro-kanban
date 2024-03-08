@@ -737,6 +737,7 @@ body {
 .header__logo img {
   width: 85px;
 }
+
 .header__nav {
   max-width: 290px;
   padding: 0;
@@ -744,6 +745,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .header__btn-main-new {
   width: 178px;
   height: 30px;
@@ -756,9 +758,11 @@ body {
   font-weight: 500;
   margin-right: 20px;
 }
+
 .header__btn-main-new a {
   color: #FFFFFF;
 }
+
 .header__user {
   height: 20px;
   display: flex;
@@ -769,6 +773,7 @@ body {
   line-height: 20px;
   color: #565EEF;
 }
+
 .header__user::after {
   content: "";
   display: block;
@@ -781,6 +786,7 @@ body {
   margin: -6px 0 0 5px;
   padding: 0;
 }
+
 .header__pop-user-set {
   display: block;
   position: absolute;
@@ -801,15 +807,18 @@ body {
   width: 100%;
   background-color: #EAEEF6;
 }
+
 .main__block {
   width: 100%;
   margin: 0 auto;
   padding: 25px 0 49px;
 }
+
 .main__content {
   width: 100%;
   display: flex;
 }
+
 .main__column {
   width: 20%;
   margin: 0 auto;
@@ -820,6 +829,7 @@ body {
   padding: 0 10px;
   margin: 15px 0;
 }
+
 .column__title p {
   color: #94A6BE;
   font-size: 14px;
@@ -833,13 +843,15 @@ body {
   display: block;
   position: relative;
 }
-.cards__item {
+
+/* .cards__item {
   padding: 5px;
   animation-name: card-animation;
   animation-duration: 500ms;
   animation-timing-function: linear;
-}
-.cards__card {
+} */
+
+/* .cards__card {
   width: 220px;
   height: 130px;
   background-color: #FFFFFF;
@@ -849,7 +861,7 @@ body {
   align-items: flex-start;
   justify-content: stretch;
   padding: 15px 13px 19px;
-}
+} */
 
 /* .card__group {
   width: 100%;
@@ -859,6 +871,7 @@ body {
   align-items: center;
   justify-content: space-between;
 } */
+
 .card__theme {
   width: auto;
   height: 20px;
@@ -870,35 +883,36 @@ body {
   font-weight: 600;
   line-height: 10px;
 }
-.card__btn {
+/* .card__btn {
   width: 24px;
   height: 24px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 2px;
-}
+} */
+
 .card__btn div {
   width: 4px;
   height: 4px;
   border-radius: 50%;
   background-color: #94A6BE;
 }
-.card__title {
+/* .card__title {
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
   color: #000000;
   margin-bottom: 10px;
-}
-.card__content {
+} */
+/* .card__content {
   height: 64px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-}
-.card__date {
+} */
+/* .card__date {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -912,7 +926,7 @@ body {
   line-height: 13px;
   color: #94A6BE;
   letter-spacing: 0.2px;
-}
+} */
 
 @media screen and (max-width: 1200px) {
   .main__block {

@@ -803,7 +803,7 @@ body {
   z-index: 2;
 }
 
-.main {
+/* .main {
   width: 100%;
   background-color: #EAEEF6;
 }
@@ -817,7 +817,7 @@ body {
 .main__content {
   width: 100%;
   display: flex;
-}
+} */
 
 .main__column {
   width: 20%;
@@ -825,7 +825,7 @@ body {
   display: block;
 }
 
-.column__title {
+/* .column__title {
   padding: 0 10px;
   margin: 15px 0;
 }
@@ -842,7 +842,7 @@ body {
   width: 100%;
   display: block;
   position: relative;
-}
+} */
 
 /* .cards__item {
   padding: 5px;

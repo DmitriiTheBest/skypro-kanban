@@ -54,11 +54,11 @@ export default function Header({ addCard }) {
               >
                 {/* <!-- <a href="">x</a> --> */}
                 <S.PopUserSetNameStyled>Ivan Ivanov</S.PopUserSetNameStyled> 
-                <S.PopUserSetMailStyled>ivan.ivanov@gmail.com</S.PopUserSetMailStyled>
-                <div className="pop-user-set__theme">
-                  <p>Темная тема</p>
-                  <input type="checkbox" className="checkbox" name="checkbox" />
-                </div>
+                <S.PopUserSetMailStyled>ivan.ivanov@gmail.com</S.PopUserSetMailStyled >
+                <S.PopUserSetThemeStyled>
+                  <S.PopUserSetThemeTextStyled>Темная тема</S.PopUserSetThemeTextStyled>
+                  <S.PopUserSetThemeInputStyled />
+                </S.PopUserSetThemeStyled>
                 <button type="button" className="_hover03">
                   <a href="#popExit">Выйти</a>
                 </button>

@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-// // импортируем HeaderStyled-component для Header и HeaderBlock для div Header__block 
+// // импортируем HeaderStyled-component для Header и HeaderBlock для div Header__block
 // import { HeaderBlock, HeaderStyled } from "./Header.styled";
 
-// другой  вариант импорта HeaderStyled-component для Header и HeaderBlock для div Header__block 
-import * as S from "./Header.styled";  
+// другой  вариант импорта HeaderStyled-component для Header и HeaderBlock для div Header__block
+import * as S from "./Header.styled";
 
 // импортируем styled-component для Container
 import { Container } from "../../styled/common/common.styled";
@@ -31,7 +31,7 @@ export default function Header({ addCard }) {
               <img src="images/logo_dark.png" alt="logo" />
             </a>
           </div>
-          <nav className="header__nav">
+          <S.HeaderNavStyled>
             {/* навешиваем обработчик события onClick для вызова функции addCard */}
             <button
               onClick={addCard}
@@ -41,7 +41,7 @@ export default function Header({ addCard }) {
               Создать новую задачу{" "}
             </button>
             {/* навешиваем обработчик события onClick для открытия модального окна */}
-            <div onClick={togglePopUp} class="header__user _hover02">
+            <div onClick={togglePopUp} className="header__user _hover02">
               Ivan Ivanov
             </div>
             {/* создать зависимость модального окна от переменной isOpened 
@@ -53,18 +53,18 @@ export default function Header({ addCard }) {
                 id="user-set-target"
               >
                 {/* <!-- <a href="">x</a> --> */}
-                <p className="pop-user-set__name">Ivan Ivanov</p>
-                <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
+                <S.PopUserSetNameStyled>Ivan Ivanov</S.PopUserSetNameStyled> 
+                <S.PopUserSetMailStyled>ivan.ivanov@gmail.com</S.PopUserSetMailStyled>
                 <div className="pop-user-set__theme">
                   <p>Темная тема</p>
-                  <input type="checkbox" class="checkbox" name="checkbox" />
+                  <input type="checkbox" className="checkbox" name="checkbox" />
                 </div>
-                <button type="button" class="_hover03">
+                <button type="button" className="_hover03">
                   <a href="#popExit">Выйти</a>
                 </button>
               </div>
             )}
-          </nav>
+          </S.HeaderNavStyled>
         </S.HeaderBlock>
       </Container>
     </S.HeaderStyled>

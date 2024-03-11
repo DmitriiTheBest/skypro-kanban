@@ -1,9 +1,17 @@
+// импортируем styled-component для Container
+import { Container } from "../../styled/common/common.styled";
+import { MainBlockStyled, MainContentStyled, MainStyled } from "./MainContent.Styled";
+
+// import * as S from "./MainContent.styled";
+
 export default function MainContent({ children }) {
   return (
-    <main className="main">
-      <div className="container">
-        <div className="main__block">
-          <div className="main__content">
+    <MainStyled>
+      
+    {/* заменяем тег 'div' c классом 'Container' на styled-component 'Container' из Common.styled.js  */}
+      <Container>
+        <MainBlockStyled>
+          <MainContentStyled>
             {/* Скопировали содержимое "main__column column" в отдельный компонент
                 Здесь вызываем компонент через Props  */}
             {/* <Column title={"Without a status"} />
@@ -15,9 +23,9 @@ export default function MainContent({ children }) {
             {/* Заменяем все строки Column на prop children,  
                 Строки Column копируем и передаем в App.jsx в тег MainContent*/}
             {children}
-          </div>
-        </div>
-      </div>
-    </main>
+          </MainContentStyled>
+        </MainBlockStyled>
+      </Container>
+    </MainStyled>
   );
 }

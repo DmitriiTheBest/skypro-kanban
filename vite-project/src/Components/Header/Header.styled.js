@@ -42,26 +42,26 @@ export const HeaderNavStyled = styled.nav`
   justify-content: center;
 `;
 
-// // создаем styled-component для <div className="header__pop-user-set pop-user-set">
-// // внутри <nav className="header__nav">
-// export const HeaderPopUserSetStyled = styled.div`
-// display: block;
-// position: absolute;
-// top: 61px;
-// right: 0;
-// width: 213px;
-// height: 205px;
-// border-radius: 10px;
-// border: 0.7px solid rgba(148, 166, 190, 0.4);
-// background: #fff;
-// box-shadow: 0px 10px 39px 0px rgba(26, 56, 101, 0.21);
-// padding: 34px;
-// text-align: center;
-// z-index: 2;
-// &:target {
-//   display: block;
-// }
-// `;
+// создаем styled-component для <div className="header__pop-user-set pop-user-set">
+// внутри <nav className="header__nav">
+export const HeaderPopUserSetStyled = styled.div`
+  display: block;
+  position: absolute;
+  top: 61px;
+  right: 0;
+  width: 213px;
+  height: 205px;
+  border-radius: 10px;
+  border: 0.7px solid rgba(148, 166, 190, 0.4);
+  background: #fff;
+  box-shadow: 0px 10px 39px 0px rgba(26, 56, 101, 0.21);
+  padding: 34px;
+  text-align: center;
+  z-index: 2;
+  &:target {
+    display: block;
+  }
+`;
 
 // создаем styled-component для <p className="pop-user-set__name">
 // внутри <div className="header__pop-user-set pop-user-set">
@@ -125,6 +125,22 @@ export const PopUserSetThemeInputStyled = styled.input`
     box-sizing: border-box;
   }
 `;
+
+// создаем styled-component для <button type="button" className="_hover03">
+export const HeaderPopUserSetButtonStyled = styled.button`
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    background-color: #33399b;
+    color: #ffffff;
+  }
+`;
+
+export const HeaderPopUserSetLinkStyled = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+`;
+
 
 // // 8. создаем styled-component для <button className="header__btn-main-new _hover01">
 

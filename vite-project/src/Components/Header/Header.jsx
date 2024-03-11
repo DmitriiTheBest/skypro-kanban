@@ -48,10 +48,7 @@ export default function Header({ addCard }) {
             Если isOpened = true, то открывается модальное окно
             если isOpened = false, то модальное окно закрывается */}
             {isOpened && (
-              <div
-                className="header__pop-user-set pop-user-set"
-                id="user-set-target"
-              >
+              <S.HeaderPopUserSetStyled>
                 {/* <!-- <a href="">x</a> --> */}
                 <S.PopUserSetNameStyled>Ivan Ivanov</S.PopUserSetNameStyled> 
                 <S.PopUserSetMailStyled>ivan.ivanov@gmail.com</S.PopUserSetMailStyled >
@@ -59,10 +56,10 @@ export default function Header({ addCard }) {
                   <S.PopUserSetThemeTextStyled>Темная тема</S.PopUserSetThemeTextStyled>
                   <S.PopUserSetThemeInputStyled />
                 </S.PopUserSetThemeStyled>
-                <button type="button" className="_hover03">
-                  <a href="#popExit">Выйти</a>
-                </button>
-              </div>
+                <S.HeaderPopUserSetButtonStyled>
+                  <S.HeaderPopUserSetLinkStyled>Выйти</S.HeaderPopUserSetLinkStyled>
+                </S.HeaderPopUserSetButtonStyled>
+              </S.HeaderPopUserSetStyled> 
             )}
           </S.HeaderNavStyled>
         </S.HeaderBlock>

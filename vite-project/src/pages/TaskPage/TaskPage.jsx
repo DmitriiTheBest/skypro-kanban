@@ -3,7 +3,7 @@
 export default function TaskPage() {
   return (
     <div>
-      <h1>Страница задачи</h1>
+      Страница задачи
     </div>
   );
 }

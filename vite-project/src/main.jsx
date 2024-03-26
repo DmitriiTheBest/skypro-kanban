@@ -5,6 +5,8 @@ import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+
+  // оборачиваем приложение (App) во встроенный компонент BrowserRouter
   <BrowserRouter>
     <React.StrictMode>
       <App />

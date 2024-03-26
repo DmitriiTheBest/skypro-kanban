@@ -3,7 +3,7 @@
 export default function ExitPage() {
   return (
     <div>
-      <h1>Страница выхода</h1>
+      Страница выхода
     </div>
   );
 }

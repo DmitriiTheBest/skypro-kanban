@@ -4,7 +4,7 @@
 export default function SignUpPage() {
   return (
     <div>
-      <h1>Страница регистрации</h1>
+      Страница регистрации
     </div>
   );
 }

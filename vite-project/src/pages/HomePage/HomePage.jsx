@@ -5,6 +5,7 @@ import PopBrowse from "../../Components/POPUPs/PopBrowse/PopBrowse";
 import Header from "../../Components/Header/Header";
 import MainContent from "../../Components/MainContent/MainContent";
 import Column from "../../Components/Column/Column";
+import { cardList } from "../../data";
 
 
 // для отрисовки колонки с карточками создаем список статусов

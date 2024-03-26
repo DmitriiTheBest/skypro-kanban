@@ -19,7 +19,7 @@ const statusList = [
 
 // Выполните логику, чтобы при нажатии на кнопку
 // Создать новую задачу добавлялась новая задача в столбец Без статуса (внутри фигурных скобок после App)
-export default function App() {
+export default function HomePage() {
   const [cards, setCards] = useState(cardList);
   // создание переменной isLoading
   const [isLoading, setIsLoading] = useState(true);

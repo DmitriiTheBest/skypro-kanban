@@ -1,9 +1,7 @@
 // создать заглушку для страницы компонента TaskPage
 
+import PopBrowse from "../../Components/POPUPs/PopBrowse/PopBrowse";
+
 export default function TaskPage() {
-  return (
-    <div>
-      Страница задачи
-    </div>
-  );
+  return <PopBrowse />;
 }

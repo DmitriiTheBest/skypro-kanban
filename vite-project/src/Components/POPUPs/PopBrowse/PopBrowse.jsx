@@ -37,7 +37,7 @@ export default function PopBrowse() {
                 action="#"
               >
                 <div className="form-browse__block">
-                  <label for="textArea01" class="subttl">
+                  <label htmlFor="textArea01" className="subttl">
                     Описание задачи
                   </label>
                   <textarea

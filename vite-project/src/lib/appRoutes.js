@@ -1,7 +1,7 @@
 
 // создать в переменной список маршрутов
 export const appRoutes = {
-  MAIN: "/",
+  HOME: "/",
   TASK: "/task/:id",
   SIGNIN: "/signin",
   SIGNUP: "/signup",

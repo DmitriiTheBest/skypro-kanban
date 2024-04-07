@@ -10,7 +10,7 @@ export default function Column({ title, cardList }) {
       </S.ColumnTitleStyled>
       <S.CardsStyled>
         {/* Вызываем компонент Card и передаем в него данные из cardList */}
-        {cardList.map((card) => <Card topic={card.topic} title={card.title} date={card.date} key={card.id} />)}
+        {cardList.map((card) => <Card topic={card.topic} title={card.title} date={card.date} key={card.id} id={card.id} />)}
         {/* <Card topic={"Web design"} title={"New task"} />
         <Card topic={"Research"} title={"New task"} />
         <Card topic={"Web design"} title={"New task"} />

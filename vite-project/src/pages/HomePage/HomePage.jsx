@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import PopExit from "../../Components/POPUPs/PopExit/PopExit";
-import PopNewCard from "../../Components/POPUPs/PopNewCard/PopNewCard";
-import PopBrowse from "../../Components/POPUPs/PopBrowse/PopBrowse";
+
 import Header from "../../Components/Header/Header";
 import MainContent from "../../Components/MainContent/MainContent";
 import Column from "../../Components/Column/Column";
 import { cardList } from "../../data";
+import { Outlet } from "react-router-dom";
 
 
 // для отрисовки колонки с карточками создаем список статусов
@@ -49,9 +48,8 @@ export default function HomePage() {
     <>
       <div className="wrapper">
         {/* Вызов компонентов и их импорт */}
-        <PopExit />
-        <PopNewCard />
-        <PopBrowse />
+
+        <Outlet />
 
         {/* передаем пропсом в компонент Header функцию addCard */}
         <Header addCard={addCard} />

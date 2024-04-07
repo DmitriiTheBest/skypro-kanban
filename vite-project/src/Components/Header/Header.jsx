@@ -8,6 +8,8 @@ import * as S from "./Header.styled";
 
 // импортируем styled-component для Container
 import { Container } from "../../styled/common/common.styled";
+import { Link } from "react-router-dom";
+import { appRoutes } from "../../lib/appRoutes";
 
 export default function Header({ addCard }) {
   const [isOpened, setIsOpened] = useState(false); // Состояние открытия модального окна
@@ -56,9 +58,11 @@ export default function Header({ addCard }) {
                   <S.PopUserSetThemeTextStyled>Темная тема</S.PopUserSetThemeTextStyled>
                   <S.PopUserSetThemeInputStyled />
                 </S.PopUserSetThemeStyled>
+                <Link to={appRoutes.EXIT}>
                 <S.HeaderPopUserSetButtonStyled>
                   <S.HeaderPopUserSetLinkStyled>Выйти</S.HeaderPopUserSetLinkStyled>
                 </S.HeaderPopUserSetButtonStyled>
+                </Link>
               </S.HeaderPopUserSetStyled> 
             )}
           </S.HeaderNavStyled>

@@ -5,7 +5,7 @@ export default function PopNewCard () {
         <div className="pop-new-card__block">
           <div className="pop-new-card__content">
             <h3 className="pop-new-card__ttl">Создание задачи</h3>
-            <a href="#" class="pop-new-card__close">
+            <a href="#" className="pop-new-card__close">
               &#10006;
             </a>
             <div className="pop-new-card__wrap">
@@ -15,7 +15,7 @@ export default function PopNewCard () {
                 action="#"
               >
                 <div className="form-new__block">
-                  <label for="formTitle" class="subttl">
+                  <label htmlFor="formTitle" className="subttl">
                     Название задачи
                   </label>
                   <input
@@ -24,11 +24,11 @@ export default function PopNewCard () {
                     name="name"
                     id="formTitle"
                     placeholder="Введите название задачи..."
-                    autofocus
+                    autoFocus
                   />
                 </div>
                 <div className="form-new__block">
-                  <label for="textArea" class="subttl">
+                  <label htmlFor="textArea" className="subttl">
                     Описание задачи
                   </label>
                   <textarea

@@ -3,6 +3,8 @@
 
 import "./SignIn.css";
 
+import { useState } from "react"; // импортируем useState
+
 export default function SignInPage({ login }) {
   const [loginData, setLoginData] = useState({
     login: "",
@@ -17,6 +19,13 @@ export default function SignInPage({ login }) {
       [name]: value, // Обновляем нужное поле
     });
   };
+
+  // создание функции handleLogin 
+  // для вызова функции для обращения к API
+  const handleLogin = (e) => {
+      e.preventDefault();
+      console.log(loginData);
+  }
 
   return (
     <div className="wrapper">
@@ -46,7 +55,7 @@ export default function SignInPage({ login }) {
                 placeholder="Пароль"
               />
               <button
-                onClick={login}
+                onClick={handleLogin}  
                 className="modal__btn-enter _hover01"
                 id="btnEnter"
               >

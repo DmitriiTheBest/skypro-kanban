@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-
 import Header from "../../Components/Header/Header";
 import MainContent from "../../Components/MainContent/MainContent";
 import Column from "../../Components/Column/Column";
-import { cardList } from "../../data";
 import { Outlet } from "react-router-dom";
-
+import { getTodos } from "../../api";
 
 // для отрисовки колонки с карточками создаем список статусов
 const statusList = [
@@ -14,22 +12,27 @@ const statusList = [
   "In working",
   "Testing",
   "Ready",
-]; 
+];
 
 // Выполните логику, чтобы при нажатии на кнопку
 // Создать новую задачу добавлялась новая задача в столбец Без статуса (внутри фигурных скобок после App)
-export default function HomePage() {
-  const [cards, setCards] = useState(cardList);
+export default function HomePage({ user }) {
+  const [cards, setCards] = useState([]);
   // создание переменной isLoading
   const [isLoading, setIsLoading] = useState(true);
 
   // Реализация эмуляции загрузки карточек для вывода текста «Данные загружаются».
   // создать состояние, которое будет отслеживать, идет ли в данный момент загрузка данных
+
   useEffect(() => {
-    setTimeout(() => {
+    getTodos({ token: user.token }).then((cardList) => {
+      console.log(cardList);
+      setCards(cardList.tasks);
       setIsLoading(false);
-    }, 2000); // 2 секунды задержки
-  }, []); // Пустой массив зависимостей для запуска только при монтировании компонента
+    }).catch((error) => {
+      alert(error);
+    })
+  }, [user]);
 
   // создать функцию логики добавления новой карточки
   function addCard() {

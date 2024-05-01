@@ -6,7 +6,8 @@ import "./SignIn.css";
 
 import { useState } from "react"; // импортируем useState
 
-export default function SignInPage() {
+export default function SignInPage({ login }) {
+  // получим в данной функции функцию login из пропсов
   const [loginData, setLoginData] = useState({
     login: "",
     password: "",
@@ -27,7 +28,7 @@ export default function SignInPage() {
     e.preventDefault();
     // console.log(loginData);
     await signIn(loginData).then((data) => {
-      console.log(data);
+      login(data.user);
     });
   };
 

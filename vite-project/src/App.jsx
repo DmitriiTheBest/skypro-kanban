@@ -14,19 +14,19 @@ import HomePage from "./pages/HomePage/HomePage";
 import TaskPage from "./pages/TaskPage/TaskPage";
 import ExitPage from "./pages/ExitPage/ExitPage";
 
-
 // создать компонент App
 export default function App() {
   // создать состояние для авторизации
   const [user, setUser] = useState(null);
+
+  // создание переменной navigate с вызовом хука useNavigate
   const navigate = useNavigate();
 
   // функция login будет принимать параметром нового юзера
   function login(newUser) {
     setUser(newUser);
-    navigate(appRoutes.HOME);
+    navigate(appRoutes.HOME); // вызов функции navigate для перенаправления юзера на главную страницу  
   }
-
   function logout() {
     setUser(null);
     navigate(appRoutes.SIGNIN);

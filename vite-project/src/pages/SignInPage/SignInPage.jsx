@@ -1,11 +1,12 @@
 // import { Link } from "react-router-dom";
 // import { appRoutes } from "../../lib/appRoutes";
 
+import { signIn } from "../../api";
 import "./SignIn.css";
 
 import { useState } from "react"; // импортируем useState
 
-export default function SignInPage({ login }) {
+export default function SignInPage() {
   const [loginData, setLoginData] = useState({
     login: "",
     password: "",
@@ -20,12 +21,15 @@ export default function SignInPage({ login }) {
     });
   };
 
-  // создание функции handleLogin 
+  // создание функции handleLogin
   // для вызова функции для обращения к API
-  const handleLogin = (e) => {
-      e.preventDefault();
-      console.log(loginData);
-  }
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    // console.log(loginData);
+    await signIn(loginData).then((data) => {
+      console.log(data);
+    });
+  };
 
   return (
     <div className="wrapper">
@@ -55,7 +59,7 @@ export default function SignInPage({ login }) {
                 placeholder="Пароль"
               />
               <button
-                onClick={handleLogin}  
+                onClick={handleLogin}
                 className="modal__btn-enter _hover01"
                 id="btnEnter"
               >

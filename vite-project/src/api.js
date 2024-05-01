@@ -121,7 +121,7 @@ export function signIn({ login, password }) {
       password,
     }),
   }).then((response) => {
-    if (!response.status === 200) {
+    if (!response.status === 400) {
       throw new Error("Wrong login or password");
     }
     return response.json();

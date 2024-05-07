@@ -1,7 +1,33 @@
-// создать заглушки для страницы компонента SignUpPage
-// import { useState } from "react";
+import { Link } from "react-router-dom";
+import { appRoutes } from "../../lib/appRoutes";
+import { useState } from "react";
+import { signUp } from "../../api";
 
 export default function SignUpPage() {
+  const [signupData, setSignupData] = useState({
+    login: "",
+    name: "",
+    password: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setSignupData({
+      ...signupData,
+      [name]: value,
+    });
+  };
+
+  const handleSignup = async () => {
+    await signUp(signupData)
+      .then(() => {
+        logout();
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
+
   return (
     <div className="wrapper">
       <div className="container-signup">
@@ -12,6 +38,8 @@ export default function SignUpPage() {
             </div>
             <form className="modal__form-login" id="formLogUp" action="#">
               <input
+                onChange={handleInputChange}
+                value={signupData.name}
                 className="modal__input first-name"
                 type="text"
                 name="first-name"
@@ -19,6 +47,8 @@ export default function SignUpPage() {
                 placeholder="Имя"
               />
               <input
+                onChange={handleInputChange}
+                value={signupData.login}
                 className="modal__input login"
                 type="text"
                 name="login"
@@ -26,6 +56,8 @@ export default function SignUpPage() {
                 placeholder="Эл. почта"
               />
               <input
+                onChange={handleInputChange}
+                value={signupData.password}
                 className="modal__input password-first"
                 type="password"
                 name="password"
@@ -33,14 +65,16 @@ export default function SignUpPage() {
                 placeholder="Пароль"
               />
               <button
+                onClick={handleSignup}
                 className="modal__btn-signup-ent _hover01"
                 id="SignUpEnter"
               >
-                <a href="../main.html">Зарегистрироваться</a>{" "}
+                {/* <a href="../main.html">Зарегистрироваться</a>{" "} */}
               </button>
               <div className="modal__form-group">
                 <p>
-                  Уже есть аккаунт? <a href="signin.html">Войдите здесь</a>
+                  Уже есть аккаунт?{" "}
+                  <Link to={appRoutes.SIGNIN}>Войдите здесь</Link>
                 </p>
               </div>
             </form>

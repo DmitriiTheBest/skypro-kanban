@@ -86,31 +86,32 @@ export const PopUserSetMailStyled = styled.p`
 
 // // // создаем styled-component для <div className="pop-user-set__theme">
 // // // внутри <div className="header__pop-user-set pop-user-set">
+// export const PopUserSetThemeStyled = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   margin-bottom: 30px;
+// `;
+
 export const PopUserSetThemeStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
-`;
+  color: ${(props) => props.theme.text};
 
-// // создаем styled-component для <p className="pop-user-set__theme-text">
-export const PopUserSetThemeTextStyled = styled.p`
-  color: #000;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: -0.14px;
-`;
-
-// создаем styled-component для .pop-user-set__theme input[type=checkbox]::before
-export const PopUserSetThemeInputStyled = styled.input`
-  position: relative;
-  width: 24px;
-  height: 13px;
-  border-radius: 100px;
-  background: #eaeef6;
-  outline: none;
-  appearance: none;
-  &::before {
+  input[type="checkbox"] {
+    position: relative;
+    width: 24px;
+    height: 13px;
+    border-radius: 100px;
+    background: #eaeef6;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  input[type="checkbox"]::before {
     content: "";
     position: absolute;
     top: 1px;
@@ -121,10 +122,43 @@ export const PopUserSetThemeInputStyled = styled.input`
     background-color: #94a6be;
     transition: 0.5s;
   }
-  &::before {
-    box-sizing: border-box;
+  input:checked[type="checkbox"]::before {
+    left: 12px;
   }
 `;
+
+// // создаем styled-component для <p className="pop-user-set__theme-text">
+// export const PopUserSetThemeTextStyled = styled.div`
+//   color: #000;
+//   font-size: 14px;
+//   line-height: 21px;
+//   letter-spacing: -0.14px;
+// `;
+
+// создаем styled-component для .pop-user-set__theme input[type=checkbox]::before
+// export const PopUserSetThemeInputStyled = styled.input`
+//   position: relative;
+//   width: 24px;
+//   height: 13px;
+//   border-radius: 100px;
+//   background: #eaeef6;
+//   outline: none;
+//   appearance: none;
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 1px;
+//     left: 1px;
+//     width: 11px;
+//     height: 11px;
+//     border-radius: 50%;
+//     background-color: #94a6be;
+//     transition: 0.5s;
+//   }
+//   &::before {
+//     box-sizing: border-box;
+//   }
+// `;
 
 // создаем styled-component для <button type="button" className="_hover03">
 export const HeaderPopUserSetButtonStyled = styled.button`
@@ -136,15 +170,23 @@ export const HeaderPopUserSetButtonStyled = styled.button`
   }
 `;
 
-export const HeaderPopUserSetLinkStyled = styled.a`
-  text-decoration: none;
-  cursor: pointer;
+// export const HeaderPopUserSetLinkStyled = styled.a`
+//   text-decoration: none;
+//   cursor: pointer;
+// `;
+
+export const HeaderPopUserSetLinkStyled = styled.button`
+  width: 72px;
+  height: 30px;
+  background-color: #565eef;
+  color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #565eef;
+
+  // // 8. создаем styled-component для <button className="header__btn-main-new _hover01">
+
+  // export const HeaderBtnMainNewStyled = styled.button
 `;
-
-
-// // 8. создаем styled-component для <button className="header__btn-main-new _hover01">
-
-// export const HeaderBtnMainNewStyled = styled.button`
 //   width: 178px;
 //   height: 30px;
 //   border-radius: 4px;

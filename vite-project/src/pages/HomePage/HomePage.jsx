@@ -4,19 +4,40 @@ import MainContent from "../../Components/MainContent/MainContent";
 import Column from "../../Components/Column/Column";
 import { Outlet } from "react-router-dom";
 import { getTodos } from "../../api";
+import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "../../styled/common/themes";
 
 // для отрисовки колонки с карточками создаем список статусов
+// const statusList = [
+//   "Without a status",
+//   "Need to do",
+//   "In working",
+//   "Testing",
+//   "Ready",
+// ];
+
 const statusList = [
-  "Without a status",
-  "Need to do",
-  "In working",
-  "Testing",
-  "Ready",
+  "Без статуса",
+  "Необходимо сделать",
+  "В работе",
+  "Тестирование",
+  "Готово",
 ];
 
 // Выполните логику, чтобы при нажатии на кнопку
 // Создать новую задачу добавлялась новая задача в столбец Без статуса (внутри фигурных скобок после App)
 export default function HomePage({ user }) {
+
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+
   const [cards, setCards] = useState([]);
   // создание переменной isLoading
   const [isLoading, setIsLoading] = useState(true);
@@ -50,12 +71,14 @@ export default function HomePage({ user }) {
   return (
     <>
       <div className="wrapper">
+
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         {/* Вызов компонентов и их импорт */}
 
         <Outlet />
 
         {/* передаем пропсом в компонент Header функцию addCard */}
-        <Header addCard={addCard} />
+        <Header addCard={addCard} toggleTheme={toggleTheme} theme={theme} />
 
         {isLoading ? (
           "Loading..."
@@ -79,6 +102,7 @@ export default function HomePage({ user }) {
             })}
           </MainContent>
         )}
+      </ThemeProvider>
       </div>
     </>
   );

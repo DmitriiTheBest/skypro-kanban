@@ -11,7 +11,7 @@ import { Container } from "../../styled/common/common.styled";
 import { Link } from "react-router-dom";
 import { appRoutes } from "../../lib/appRoutes";
 
-export default function Header({ addCard }) {
+export default function Header({ addCard, toggleTheme, theme }) {
   const [isOpened, setIsOpened] = useState(false); // Состояние открытия модального окна
   function togglePopUp() {
     // Функция открытия модального окна
@@ -52,18 +52,22 @@ export default function Header({ addCard }) {
             {isOpened && (
               <S.HeaderPopUserSetStyled>
                 {/* <!-- <a href="">x</a> --> */}
-                <S.PopUserSetNameStyled>Ivan Ivanov</S.PopUserSetNameStyled> 
-                <S.PopUserSetMailStyled>ivan.ivanov@gmail.com</S.PopUserSetMailStyled >
+                <S.PopUserSetNameStyled>Ivan Ivanov</S.PopUserSetNameStyled>
+                <S.PopUserSetMailStyled>
+                  ivan.ivanov@gmail.com
+                </S.PopUserSetMailStyled>
                 <S.PopUserSetThemeStyled>
-                  <S.PopUserSetThemeTextStyled>Темная тема</S.PopUserSetThemeTextStyled>
-                  <S.PopUserSetThemeInputStyled />
+                  Темная тема
+                  <input onClick={toggleTheme} type="checkbox" />
                 </S.PopUserSetThemeStyled>
                 <Link to={appRoutes.EXIT}>
-                <S.HeaderPopUserSetButtonStyled>
-                  <S.HeaderPopUserSetLinkStyled>Выйти</S.HeaderPopUserSetLinkStyled>
-                </S.HeaderPopUserSetButtonStyled>
+                  <S.HeaderPopUserSetButtonStyled>
+                    <S.HeaderPopUserSetLinkStyled>
+                      Выйти
+                    </S.HeaderPopUserSetLinkStyled>
+                  </S.HeaderPopUserSetButtonStyled>
                 </Link>
-              </S.HeaderPopUserSetStyled> 
+              </S.HeaderPopUserSetStyled>
             )}
           </S.HeaderNavStyled>
         </S.HeaderBlock>

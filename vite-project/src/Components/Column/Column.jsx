@@ -2,6 +2,8 @@ import Card from "../Card/Card";
 
 import * as S from "./Column.styled";
 
+// import { format } from "date-fns";
+
 export default function Column({ title, cardList }) {
   return (
     <S.MainColumnStyled>

@@ -13,6 +13,7 @@ import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import HomePage from "./pages/HomePage/HomePage";
 import TaskPage from "./pages/TaskPage/TaskPage";
 import ExitPage from "./pages/ExitPage/ExitPage";
+import './App.css';
 
 // создать компонент App
 export default function App() {

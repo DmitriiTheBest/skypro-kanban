@@ -1,12 +1,12 @@
-// import { Link } from "react-router-dom";
-// import { appRoutes } from "../../lib/appRoutes";
+import { Link } from "react-router-dom";
+import { appRoutes } from "../../lib/appRoutes";
 
 import { signIn } from "../../api";
 import "./SignIn.css";
 
 import { useState } from "react"; // импортируем useState
 
-export default function SignInPage({ login }) {
+export default function SignIn({ login }) {
   // получим в данной функции функцию login из пропсов
   const [loginData, setLoginData] = useState({
     login: "",
@@ -27,9 +27,13 @@ export default function SignInPage({ login }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     // console.log(loginData);
-    await signIn(loginData).then((data) => {
-      login(data.user);
-    });
+    await signIn(loginData)
+      .then((data) => {
+        login(data.user);
+      })
+      .catch((error) => {
+        alert(error);
+      });
   };
 
   return (
@@ -68,7 +72,8 @@ export default function SignInPage({ login }) {
               </button>
               <div className="modal__form-group">
                 <p>Нужно зарегистрироваться?</p>
-                <a href="signup.html">Регистрируйтесь здесь</a>
+                <Link to={appRoutes.SIGNUP}>Регистрируйтесь здесь</Link>
+                {/* <a href="signup.html">Регистрируйтесь здесь</a> */}
               </div>
             </form>
           </div>

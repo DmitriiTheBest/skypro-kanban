@@ -1,12 +1,7 @@
 import { useState } from "react";
 
-// // импортируем HeaderStyled-component для Header и HeaderBlock для div Header__block
-// import { HeaderBlock, HeaderStyled } from "./Header.styled";
-
-// другой  вариант импорта HeaderStyled-component для Header и HeaderBlock для div Header__block
 import * as S from "./Header.styled";
 
-// импортируем styled-component для Container
 import { Container } from "../../styled/common/common.styled";
 import { Link } from "react-router-dom";
 import { appRoutes } from "../../lib/appRoutes";
@@ -14,13 +9,10 @@ import { appRoutes } from "../../lib/appRoutes";
 export default function Header({ addCard, toggleTheme, theme }) {
   const [isOpened, setIsOpened] = useState(false); // Состояние открытия модального окна
   function togglePopUp() {
-    // Функция открытия модального окна
-    setIsOpened(!isOpened);
+    setIsOpened(!isOpened); // Функция открытия модального окна
   }
   return (
-    // заменить тег 'header' на 'HeaderStyled'
     <S.HeaderStyled>
-      {/* заменить тег 'div' c классом 'Container' на styled-component 'Container'  */}
       <Container>
         <S.HeaderBlock>
           <div className="header__logo _show _light">
@@ -34,18 +26,13 @@ export default function Header({ addCard, toggleTheme, theme }) {
             </a>
           </div>
           <S.HeaderNavStyled>
-            {/* навешиваем обработчик события onClick для вызова функции addCard */}
-            <button
-              onClick={addCard}
-              className="header__btn-main-new _hover01"
-              id="btnMainNew"
-            >
-              Создать новую задачу{" "}
-            </button>
+            <S.HeaderButtonMainNew onClick={addCard}>
+              Создать новую задачу
+            </S.HeaderButtonMainNew>
             {/* навешиваем обработчик события onClick для открытия модального окна */}
-            <div onClick={togglePopUp} className="header__user _hover02">
+            <S.HeaderUserStyled onClick={togglePopUp}>
               Ivan Ivanov
-            </div>
+            </S.HeaderUserStyled>
             {/* создать зависимость модального окна от переменной isOpened 
             Если isOpened = true, то открывается модальное окно
             если isOpened = false, то модальное окно закрывается */}

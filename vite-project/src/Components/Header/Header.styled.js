@@ -42,6 +42,30 @@ export const HeaderNavStyled = styled.nav`
   justify-content: center;
 `;
 
+export const HeaderButtonMainNew = styled.button`
+  width: 178px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #565eef;
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 500;
+  margin-right: 20px;
+`;
+
+export const HeaderUserStyled = styled.div`
+  height: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: #565eef;
+`;
+
 // создаем styled-component для <div className="header__pop-user-set pop-user-set">
 // внутри <nav className="header__nav">
 export const HeaderPopUserSetStyled = styled.div`

@@ -8,3 +8,5 @@ export const appRoutes = {
   EXIT: "/exit",
   NOT_FOUND: "*",
 };
+
+// done 

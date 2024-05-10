@@ -11,6 +11,12 @@ export default function Header({ addCard, toggleTheme, theme }) {
   function togglePopUp() {
     setIsOpened(!isOpened); // Функция открытия модального окна
   }
+  let logoSrc;
+  if (theme === 'light') {
+    logoSrc = "./images/logo.png";
+  } else {
+    logoSrc = "./images/logo_dark.png";
+  }
   return (
     <S.HeaderStyled>
       <Container>

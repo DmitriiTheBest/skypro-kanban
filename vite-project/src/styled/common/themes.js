@@ -34,3 +34,6 @@ export const darkTheme = {
     textHeaderUser: '#FFF',
     // Другие стили темной темы
   };
+
+
+// done

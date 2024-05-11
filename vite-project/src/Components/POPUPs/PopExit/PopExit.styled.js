@@ -74,7 +74,7 @@ export const PopExitStyled = styled.div`
 `;
 
 export const PopExitBlock = styled.div`
-  display: block;
+  display: flex;
   margin: 0 auto;
   background-color: #ffffff;
   max-width: 370px;
@@ -83,9 +83,12 @@ export const PopExitBlock = styled.div`
   border-radius: 10px;
   border: 0.7px solid #d4dbe5;
   box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.13);
+  flex-direction: column;
+  align-items: center;
 `;
 
-export const PopExitForm = styled.form``;
+export const PopExitForm = styled.form`
+`;
 
 export const PopExitFormGroup = styled.div`
   width: 100%;

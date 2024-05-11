@@ -18,7 +18,6 @@ export default function PopExit({ logout }) {
       <PopExitContainer>
         <PopExitBlock>
           <PopExitTitle>
-            {/* <h2>Выйти из аккаунта?</h2> */}
             <H2>Выйти из аккаунта?</H2>
           </PopExitTitle>
           <PopExitForm>

@@ -1,10 +1,4 @@
-// создать компонент NotFoundPage
-
-// import React from "react"; // импортируем React
-
-// // создаем компонент NotFoundPage
-
-export default function NotFoundPage() {
+export default function NotFound() {
     return (
         <div>
             Страница не найдена
@@ -12,3 +6,4 @@ export default function NotFoundPage() {
     );
 }
 
+// done 

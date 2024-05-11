@@ -1,17 +1,13 @@
-// создать styled-component для Header
+import styled from "styled-components"; // импортируем styled-components
+import { hover03 } from "../../styled/common/common.styled";
 
-// импортируем styled-components
-import styled from "styled-components";
-
-// создаем styled-component для Header
-export const HeaderStyled = styled.header`
+export const HeaderStyled = styled.header` // создаем styled-component для Header
   width: 100%;
   margin: 0 auto;
   background-color: #ffffff;
 `;
 
-// создаем styled-component для Header block
-export const HeaderBlock = styled.div`
+export const HeaderBlock = styled.div` // создаем styled-component для Header block
   height: 70px;
   display: flex;
   flex-wrap: nowrap;
@@ -23,17 +19,7 @@ export const HeaderBlock = styled.div`
   padding: 0 10px;
 `;
 
-// // 5. создаем styled-component для <div className="header__logo _show _light">
-// export const HeaderLogoLightStyled = styled.div`
-//   display: none;
-// `;
-
-// // 6. создаем styled-component для <div className="header__logo _dark">
-// export const HeaderLogoDarkStyled = styled.div`
-//   display: none;
-// `;
-
-// 7. создаем styled-component для <nav className="header__nav">
+// создаем styled-component для <nav className="header__nav">
 export const HeaderNavStyled = styled.nav`
   max-width: 290px;
   padding: 0;
@@ -66,8 +52,6 @@ export const HeaderUserStyled = styled.div`
   color: #565eef;
 `;
 
-// создаем styled-component для <div className="header__pop-user-set pop-user-set">
-// внутри <nav className="header__nav">
 export const HeaderPopUserSetStyled = styled.div`
   display: block;
   position: absolute;
@@ -87,8 +71,6 @@ export const HeaderPopUserSetStyled = styled.div`
   }
 `;
 
-// создаем styled-component для <p className="pop-user-set__name">
-// внутри <div className="header__pop-user-set pop-user-set">
 export const PopUserSetNameStyled = styled.p`
   color: #000;
   font-size: 14px;
@@ -98,8 +80,6 @@ export const PopUserSetNameStyled = styled.p`
   margin-bottom: 4px;
 `;
 
-// создаем styled-component для <p className="pop-user-set__mail">
-// внутри <div className="header__pop-user-set pop-user-set">
 export const PopUserSetMailStyled = styled.p`
   color: #94a6be;
   font-size: 14px;
@@ -107,15 +87,6 @@ export const PopUserSetMailStyled = styled.p`
   letter-spacing: -0.14px;
   margin-bottom: 10px;
 `;
-
-// // // создаем styled-component для <div className="pop-user-set__theme">
-// // // внутри <div className="header__pop-user-set pop-user-set">
-// export const PopUserSetThemeStyled = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   margin-bottom: 30px;
-// `;
 
 export const PopUserSetThemeStyled = styled.div`
   display: flex;
@@ -151,83 +122,42 @@ export const PopUserSetThemeStyled = styled.div`
   }
 `;
 
-// // создаем styled-component для <p className="pop-user-set__theme-text">
-// export const PopUserSetThemeTextStyled = styled.div`
-//   color: #000;
-//   font-size: 14px;
-//   line-height: 21px;
-//   letter-spacing: -0.14px;
-// `;
-
-// создаем styled-component для .pop-user-set__theme input[type=checkbox]::before
-// export const PopUserSetThemeInputStyled = styled.input`
-//   position: relative;
-//   width: 24px;
-//   height: 13px;
-//   border-radius: 100px;
-//   background: #eaeef6;
-//   outline: none;
-//   appearance: none;
-//   &::before {
-//     content: "";
-//     position: absolute;
-//     top: 1px;
-//     left: 1px;
-//     width: 11px;
-//     height: 11px;
-//     border-radius: 50%;
-//     background-color: #94a6be;
-//     transition: 0.5s;
-//   }
-//   &::before {
-//     box-sizing: border-box;
-//   }
-// `;
-
-// создаем styled-component для <button type="button" className="_hover03">
-export const HeaderPopUserSetButtonStyled = styled.button`
-  cursor: pointer;
-  outline: none;
-  &:hover {
-    background-color: #33399b;
-    color: #ffffff;
-  }
-`;
-
-// export const HeaderPopUserSetLinkStyled = styled.a`
-//   text-decoration: none;
-//   cursor: pointer;
-// `;
-
-export const HeaderPopUserSetLinkStyled = styled.button`
+export const ExitButtonStyled = styled.button`
   width: 72px;
   height: 30px;
-  background-color: #565eef;
-  color: #ffffff;
+  background: transparent;
+  color: ${props => props.theme.textHeaderUser};
   border-radius: 4px;
-  border: 1px solid #565eef;
+  border: 1px solid ${props => props.theme.textHeaderUser};
+  cursor: pointer;
+  outline: none;
 
-  // // 8. создаем styled-component для <button className="header__btn-main-new _hover01">
-
-  // export const HeaderBtnMainNewStyled = styled.button
+  ${hover03}
 `;
-//   width: 178px;
-//   height: 30px;
-//   border-radius: 4px;
-//   background-color: #565eef;
-//   color: #ffffff;
-//   border: none;
-//   font-size: 14px;
-//   line-height: 1;
-//   font-weight: 500;
-//   margin-right: 20px;
-//   a {
+
+export const HeaderLogoStyled = styled.div`
+  width: 85px;
+`;
+
+export const ImageStyled = styled.img`
+  width: 85px;
+`;
+
+// создаем styled-component для <button type="button" className="_hover03">
+// export const HeaderPopUserSetButtonStyled = styled.button`
+//   cursor: pointer;
+//   outline: none;
+//   &:hover {
+//     background-color: #33399b;
 //     color: #ffffff;
 //   }
-//   &:hover
 // `;
 
-// // Создаем styled-component для <button onClick={addCard} className="header__btn-main-new _hover01"
-
-// // 9. создаем styled-component для <div className="header__user _hover02">
-// export const HeaderUserStyled = styled.div``;
+// export const HeaderPopUserSetLinkStyled = styled.button`
+//   width: 72px;
+//   height: 30px;
+//   background-color: #565eef;
+//   color: #ffffff;
+//   border-radius: 4px;
+//   border: 1px solid #565eef;
+// `;

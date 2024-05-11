@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { appRoutes } from "../../lib/appRoutes";
-
 import { signIn } from "../../api";
 import "./SignIn.css";
-
 import { useState } from "react"; // импортируем useState
+import * as S from "./SignIn.styled";
 
 export default function SignIn({ login }) {
   // получим в данной функции функцию login из пропсов
@@ -37,15 +36,15 @@ export default function SignIn({ login }) {
   };
 
   return (
-    <div className="wrapper">
-      <div className="container-signin">
-        <div className="modal">
-          <div className="modal__block">
-            <div className="modal__ttl">
+    <S.WrapperDivStyled>
+      <S.ContainerSigninStyled>
+        <S.ModalStyled>
+          <S.ModalBlockStyled>
+            <S.ModalTitleStyled>
               <h2>Вход</h2>
-            </div>
-            <form className="modal__form-login" id="formLogIn" action="#">
-              <input
+            </S.ModalTitleStyled>
+            <S.ModalFormLoginStyled action="#">
+              <S.ModalInputStyled
                 value={loginData.login}
                 onChange={handleInputChange}
                 className="modal__input"
@@ -53,31 +52,27 @@ export default function SignIn({ login }) {
                 name="login"
                 id="formlogin"
                 placeholder="Эл. почта"
-              />
-              <input
+              ></S.ModalInputStyled>
+
+              <S.ModalInputStyled
                 value={loginData.password}
                 onChange={handleInputChange}
-                className="modal__input"
                 type="password"
                 name="password"
                 id="formpassword"
                 placeholder="Пароль"
-              />
-              <button
-                onClick={handleLogin}
-                className="modal__btn-enter _hover01"
-                id="btnEnter"
-              >
+              ></S.ModalInputStyled>
+              <S.ModalButtonEnterStyled onClick={handleLogin}>
                 Войти
-              </button>
-              <div className="modal__form-group">
+              </S.ModalButtonEnterStyled>
+              <S.ModalFormGroupStyled>
                 <p>Нужно зарегистрироваться?</p>
                 <Link to={appRoutes.SIGNUP}>Регистрируйтесь здесь</Link>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+              </S.ModalFormGroupStyled>
+            </S.ModalFormLoginStyled>
+          </S.ModalBlockStyled>
+        </S.ModalStyled>
+      </S.ContainerSigninStyled>
+    </S.WrapperDivStyled>
   );
 }

@@ -51,6 +51,7 @@ export default function Card({ topic, title, date, id }) {
                 </clipPath>
               </defs>
             </svg>
+            <p>{date}</p>
           </S.CardDate>
         </S.CardContent>
       </S.CardsCard>

@@ -1,5 +1,5 @@
 import styled from "styled-components"; // импортируем styled-components
-import { hover03 } from "../../styled/common/common.styled";
+import { hover03 } from "../../styled/common/Common.styled";
 
 export const HeaderStyled = styled.header` // создаем styled-component для Header
   width: 100%;

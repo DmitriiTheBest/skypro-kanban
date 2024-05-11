@@ -143,21 +143,4 @@ export const ImageStyled = styled.img`
   width: 85px;
 `;
 
-// создаем styled-component для <button type="button" className="_hover03">
-// export const HeaderPopUserSetButtonStyled = styled.button`
-//   cursor: pointer;
-//   outline: none;
-//   &:hover {
-//     background-color: #33399b;
-//     color: #ffffff;
-//   }
-// `;
-
-// export const HeaderPopUserSetLinkStyled = styled.button`
-//   width: 72px;
-//   height: 30px;
-//   background-color: #565eef;
-//   color: #ffffff;
-//   border-radius: 4px;
-//   border: 1px solid #565eef;
-// `;
+// done 

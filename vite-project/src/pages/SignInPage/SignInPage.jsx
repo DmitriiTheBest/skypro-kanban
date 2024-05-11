@@ -73,7 +73,6 @@ export default function SignIn({ login }) {
               <div className="modal__form-group">
                 <p>Нужно зарегистрироваться?</p>
                 <Link to={appRoutes.SIGNUP}>Регистрируйтесь здесь</Link>
-                {/* <a href="signup.html">Регистрируйтесь здесь</a> */}
               </div>
             </form>
           </div>

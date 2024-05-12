@@ -1,9 +1,23 @@
 import { Link } from "react-router-dom";
 import { appRoutes } from "../../lib/appRoutes";
 import { useState } from "react";
+import "./signup.css";
 import { signUp } from "../../api";
+import {
+  ModalBlockStyled,
+  ModalFormGroupStyled,
+  ModalFormLoginStyled,
+  ModalInputStyled,
+  ModalStyled,
+  ModalTitleStyled,
+  WrapperDivStyled,
+} from "../SignInPage/SignIn.styled";
+import {
+  ContainerSignupStyled,
+  ModalButtonSignupStyled,
+} from "./Signup.styled";
 
-export default function SignUpPage() {
+export default function SignUpPage({ logout }) {
   const [signupData, setSignupData] = useState({
     login: "",
     name: "",
@@ -29,24 +43,24 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="wrapper">
-      <div className="container-signup">
-        <div className="modal">
-          <div className="modal__block">
-            <div className="modal__ttl">
+    <WrapperDivStyled>
+      <ContainerSignupStyled>
+        <ModalStyled>
+          <ModalBlockStyled>
+            <ModalTitleStyled>
               <h2>Регистрация</h2>
-            </div>
-            <form className="modal__form-login" id="formLogUp" action="#">
-              <input
+            </ModalTitleStyled>
+            <ModalFormLoginStyled action="#">
+              <ModalInputStyled
                 onChange={handleInputChange}
                 value={signupData.name}
                 className="modal__input first-name"
                 type="text"
-                name="first-name"
-                id="first-name"
+                name="name"
+                id="name"
                 placeholder="Имя"
-              />
-              <input
+              ></ModalInputStyled>
+              <ModalInputStyled
                 onChange={handleInputChange}
                 value={signupData.login}
                 className="modal__input login"
@@ -54,8 +68,8 @@ export default function SignUpPage() {
                 name="login"
                 id="loginReg"
                 placeholder="Эл. почта"
-              />
-              <input
+              ></ModalInputStyled>
+              <ModalInputStyled
                 onChange={handleInputChange}
                 value={signupData.password}
                 className="modal__input password-first"
@@ -63,24 +77,20 @@ export default function SignUpPage() {
                 name="password"
                 id="passwordFirst"
                 placeholder="Пароль"
-              />
-              <button
-                onClick={handleSignup}
-                className="modal__btn-signup-ent _hover01"
-                id="SignUpEnter"
-              >
-                <Link to={appRoutes.HOME}>Зарегистрироваться</Link>{" "}
-              </button>
-              <div className="modal__form-group">
+              ></ModalInputStyled>
+              <ModalButtonSignupStyled onClick={handleSignup}>
+                Зарегистрироваться{" "}
+              </ModalButtonSignupStyled>
+              <ModalFormGroupStyled>
                 <p>
-                  Уже есть аккаунт?{" "}
+                  Уже есть аккаунт?
                   <Link to={appRoutes.SIGNIN}>Войдите здесь</Link>
                 </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+              </ModalFormGroupStyled>
+            </ModalFormLoginStyled>
+          </ModalBlockStyled>
+        </ModalStyled>
+      </ContainerSignupStyled>
+    </WrapperDivStyled>
   );
 }

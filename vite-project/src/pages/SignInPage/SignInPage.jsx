@@ -5,7 +5,7 @@ import "./SignIn.css";
 import { useState } from "react"; // импортируем useState
 import * as S from "./SignIn.styled";
 
-export default function SignIn({ login }) {
+export default function SignInPage({ login }) {
   // получим в данной функции функцию login из пропсов
   const [loginData, setLoginData] = useState({
     login: "",

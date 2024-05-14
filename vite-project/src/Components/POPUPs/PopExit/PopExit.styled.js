@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { hover01, hover03 } from "../../../styled/common/common.styled";
+import { hover01, hover03 } from "../../../styled/common/Common.styled";
 
 export const PopExitButtonYes = styled.span`
   width: 153px;

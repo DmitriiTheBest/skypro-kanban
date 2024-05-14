@@ -49,7 +49,7 @@ export default function HomePage({ user }) {
   // создаем новую переменную для логики добавления новой карточки
   const newCard = {
     _id: cards.length + 1,
-    topic: "Web design",
+    topic: "Web Design",
     title: "Название задачи",
     date: new Date(),
     status: "Без статуса",

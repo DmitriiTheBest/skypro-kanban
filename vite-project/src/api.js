@@ -13,7 +13,7 @@ export function signIn({ login, password }) {
       password,
     }),
   }).then((response) => {
-    if (!response.status === 400) {
+    if (response.status === 400) {
       throw new Error("Wrong login or password");
     }
     return response.json();
@@ -45,7 +45,7 @@ export function signUp({ login, name, password }) {
       password,
     }),
   }).then((response) => {
-    if (!response.status === 400) {
+    if (response.status === 400) {
       throw new Error("User with this name already exists");
     }
     return response.json();

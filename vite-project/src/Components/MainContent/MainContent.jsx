@@ -1,5 +1,5 @@
 // импортируем styled-component для Container
-import { Container } from "../../styled/common/common.styled";
+import { Container } from "../../styled/common/Common.styled";
 import {
   MainBlockStyled,
   MainContentStyled,

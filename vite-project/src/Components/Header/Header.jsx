@@ -1,69 +1,54 @@
 import { useState } from "react";
 
-// // импортируем HeaderStyled-component для Header и HeaderBlock для div Header__block
-// import { HeaderBlock, HeaderStyled } from "./Header.styled";
-
-// другой  вариант импорта HeaderStyled-component для Header и HeaderBlock для div Header__block
 import * as S from "./Header.styled";
 
-// импортируем styled-component для Container
 import { Container } from "../../styled/common/common.styled";
 import { Link } from "react-router-dom";
 import { appRoutes } from "../../lib/appRoutes";
 
-export default function Header({ addCard }) {
+export default function Header({ addCard, toggleTheme, theme }) {
   const [isOpened, setIsOpened] = useState(false); // Состояние открытия модального окна
   function togglePopUp() {
-    // Функция открытия модального окна
-    setIsOpened(!isOpened);
+    setIsOpened(!isOpened); // Функция открытия модального окна
+  }
+  let logoSrc;
+  if (theme === "light") {
+    logoSrc = "./images/logo.png";
+  } else {
+    logoSrc = "./images/logo_dark.png";
   }
   return (
-    // заменить тег 'header' на 'HeaderStyled'
     <S.HeaderStyled>
-      {/* заменить тег 'div' c классом 'Container' на styled-component 'Container'  */}
       <Container>
         <S.HeaderBlock>
-          <div className="header__logo _show _light">
+          <S.HeaderLogoStyled>
             <a href="" target="_self">
-              <img src="images/logo.png" alt="logo" />
+              <S.ImageStyled src={logoSrc} alt="logo" />
             </a>
-          </div>
-          <div className="header__logo _dark">
-            <a href="" target="_self">
-              <img src="images/logo_dark.png" alt="logo" />
-            </a>
-          </div>
+          </S.HeaderLogoStyled>
           <S.HeaderNavStyled>
-            {/* навешиваем обработчик события onClick для вызова функции addCard */}
-            <button
-              onClick={addCard}
-              className="header__btn-main-new _hover01"
-              id="btnMainNew"
-            >
-              Создать новую задачу{" "}
-            </button>
+            <S.HeaderButtonMainNew onClick={addCard}>
+              Создать новую задачу
+            </S.HeaderButtonMainNew>
             {/* навешиваем обработчик события onClick для открытия модального окна */}
-            <div onClick={togglePopUp} className="header__user _hover02">
+            <S.HeaderUserStyled onClick={togglePopUp}>
               Ivan Ivanov
-            </div>
-            {/* создать зависимость модального окна от переменной isOpened 
-            Если isOpened = true, то открывается модальное окно
-            если isOpened = false, то модальное окно закрывается */}
+            </S.HeaderUserStyled>
+            
             {isOpened && (
               <S.HeaderPopUserSetStyled>
-                {/* <!-- <a href="">x</a> --> */}
-                <S.PopUserSetNameStyled>Ivan Ivanov</S.PopUserSetNameStyled> 
-                <S.PopUserSetMailStyled>ivan.ivanov@gmail.com</S.PopUserSetMailStyled >
+                <S.PopUserSetNameStyled>Ivan Ivanov</S.PopUserSetNameStyled>
+                <S.PopUserSetMailStyled>
+                  ivan.ivanov@gmail.com
+                </S.PopUserSetMailStyled>
                 <S.PopUserSetThemeStyled>
-                  <S.PopUserSetThemeTextStyled>Темная тема</S.PopUserSetThemeTextStyled>
-                  <S.PopUserSetThemeInputStyled />
+                  Темная тема
+                  <input onClick={toggleTheme} type="checkbox" />
                 </S.PopUserSetThemeStyled>
                 <Link to={appRoutes.EXIT}>
-                <S.HeaderPopUserSetButtonStyled>
-                  <S.HeaderPopUserSetLinkStyled>Выйти</S.HeaderPopUserSetLinkStyled>
-                </S.HeaderPopUserSetButtonStyled>
+                  <S.ExitButtonStyled>Выйти</S.ExitButtonStyled>
                 </Link>
-              </S.HeaderPopUserSetStyled> 
+              </S.HeaderPopUserSetStyled>
             )}
           </S.HeaderNavStyled>
         </S.HeaderBlock>
@@ -71,3 +56,5 @@ export default function Header({ addCard }) {
     </S.HeaderStyled>
   );
 }
+
+// done 

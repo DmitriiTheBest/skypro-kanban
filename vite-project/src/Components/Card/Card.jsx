@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { topicHeader } from "../../lib/topic";
-// import { CardButton, CardContent, CardGroup, CardTopic, CardsCard, CardsItem, TopicText } from "./Cards.styled";
-
 import * as S from "./Cards.styled";
 
 export default function Card({ topic, title, date, id }) {
@@ -9,16 +7,14 @@ export default function Card({ topic, title, date, id }) {
     <S.CardsItem>
       <S.CardsCard>
         <S.CardGroup>
-          {/* заменим div CardTheme на styled-component CardTopic */}
           <S.CardTopic $themeColor={topicHeader[topic]}>
-            {/* заменим p (параграф) на styled-component TopicText */}
             <S.TopicText>{topic}</S.TopicText>
           </S.CardTopic>
           <a href="#popBrowse" target="_self">
             <S.CardButton>
-              <div></div>
-              <div></div>
-              <div></div>
+              <div/>
+              <div/>
+              <div/>
             </S.CardButton>
           </a>
         </S.CardGroup>
@@ -32,7 +28,8 @@ export default function Card({ topic, title, date, id }) {
               width="13"
               height="13"
               viewBox="0 0 13 13"
-              fill="none">
+              fill="none"
+            >
               <g clipPath="url(#clip0_1_415)">
                 <path
                   d="M10.5625 2.03125H2.4375C1.7644 2.03125 1.21875 2.5769 1.21875 3.25V10.5625C1.21875 11.2356 1.7644 11.7812 2.4375 11.7812H10.5625C11.2356 11.7812 11.7812 11.2356 11.7812 10.5625V3.25C11.7812 2.5769 11.2356 2.03125 10.5625 2.03125Z"
@@ -54,10 +51,12 @@ export default function Card({ topic, title, date, id }) {
                 </clipPath>
               </defs>
             </svg>
-            <S.CardDateText>{date}</S.CardDateText>
+            <p>{date}</p>
           </S.CardDate>
         </S.CardContent>
       </S.CardsCard>
     </S.CardsItem>
   );
 }
+
+// done

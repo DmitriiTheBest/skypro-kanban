@@ -1,5 +1,4 @@
-
-// создать в переменной список маршрутов
+// создаём список маршрутов
 export const appRoutes = {
   HOME: "/",
   TASK: "/task/:id",
@@ -8,3 +7,5 @@ export const appRoutes = {
   EXIT: "/exit",
   NOT_FOUND: "*",
 };
+
+// done 

@@ -14,12 +14,20 @@ export const UserContext = createContext(null);
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(getUserFromLocalStorage());
+
+    // создание функции login 
     function login(newUser) { // устанавливает пользователя 
         setUser(newUser);
         localStorage.setItem("user", JSON.stringify(newUser));    
     } 
+
+    // создание функции logout
+    function logout() { 
+        setUser(null);
+        localStorage.removeItem("user");    
+    }
     return (
-        <UserContext.Provider>
+        <UserContext.Provider value={{ user, login, logout }}>
             {children}
         </UserContext.Provider> 
     )

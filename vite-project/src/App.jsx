@@ -31,7 +31,7 @@ export default function App() {
     // задали маршруты
     // данные страницы доступны без авторизации
     <Routes>
-      <Route element={<PrivateRoute user={user} />}>
+      <Route element={<PrivateRoute />}>
         <Route path={appRoutes.HOME} element={<HomePage user={user} />}>
           <Route path={appRoutes.TASK} element={<TaskPage />} />
           <Route path={appRoutes.EXIT} element={<ExitPage logout={logout} />} />
